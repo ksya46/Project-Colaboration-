@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <div class="sidebar">
+            h2>MyLibrary</h2>
+            <a href="index.html">Home</a>
+            <a href="library.html">Library</a>
+        </div>
+
+        <div class="main">
+            <h1>Book Title</h1>
+            <img id="bookImage" widht="200">
+            <p id="bookContent"></p>
+        </div>
+
+    </div>
+
+    <script>
+        let book = JSON.parse(localStorage.getItem("selectedBook"));
+
+        if (book) {
+            document.getElementById("bookTitle").innertext = book.title;
+            document.getElementById("bookImage").src = book.image;
+            document.getElementById("bookContent").textContent = book.content || "No content yet...";
+        
+        }
+    </script>
+    
+</body>
+</html>
